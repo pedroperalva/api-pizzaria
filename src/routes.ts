@@ -20,10 +20,13 @@ import { SendOrderController } from "./controllers/order/SendOrder";
 import { ListOrderController } from "./controllers/order/ListOrder";
 import { DetailOrderController } from "./controllers/order/DetailOrder";
 import { FinishOrderController } from "./controllers/order/FinishOrder";
+import { TestController } from "./controllers/testing/test";
 
 const router = Router();
 
 const upload = multer(uploadConfig.upload("./tmp"));
+
+router.get("/test", new TestController().handle);
 
 // ROTAS USER
 router.post("/users", new CreateUserController().handle);
